@@ -5,9 +5,12 @@ $text-color: #333333;
 
 $font-base: "Noto Serif JP", serif;
 
+$header-height-sp: 60px;
+$header-height-pc: 70px;
+
 $breakpoints: (
   sm: "screen and (min-width:600px)",
-  sm: "screen and (min-width:768px)",
+  md: "screen and (min-width:768px)",
   lg: "screen and (min-width:900px)",
   xl: "screen and (min-width:1200px)",
 );
@@ -28,36 +31,149 @@ body {
 
 }
 
-.header {
+.inner {
+  padding-inline: 15px;
 
+  @include mq("md") {
+    max-width: calc(1200px + 40px * 2);
+    margin-inline: auto;
+    padding-inline: 40px;
+  }
+}
+
+.header {
+  height: $header-height-sp;
+
+  @include mq("md") {
+    height: $header-height-pc;
+  }
 }
 
 .header__inner {
-  padding-left: 15px;
-  padding-right: 15px;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header__logo {
 
+  a{
+    img{
+      width: 120px;
+      display: block;
+    }
+  }
 }
 
 .header__nav {
+  background: $main-color;
+  width: 270px;
+  height: calc(100% - $header-height-sp);
+  position: fixed;
+  right: 0;
+  top: $header-height-sp;
+  padding: calc(40px - 8px) 15px;
+  font-size: 18px;
+  transform: translateX(100%);
+  transition: transform 0.3s;
+
+  &.is-checked {
+    transform: translateX(0);
+  }
+
+  @include mq("md") {
+    background: transparent;
+    width: auto;
+    height: auto;
+    position: static;
+    padding: 0;
+    transform: translateX(0);
+  }
+}
+
+.header__lists{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: calc(32px - 8px * 2);
+
+  @include mq("md") {
+    flex-direction: row;
+    align-items: center;
+    gap: 46px;
+  }
+}
+
+.header__list{
 
 }
 
 .header__link {
+  display: inline-block;
+  padding-block: 8px;
+  color: #fff;
 
+  @include mq("md") {
+    color: $text-color;
+    font-size: 16px;
+  }
 }
 
-.header_open {
-
+.header_icon {
+  @include mq("md") {
+    display: none;
+  }
 }
 
 .drawer-icon {
+  position: relative;
+  width: 30px;
+  height: 18px;
 
+  &.is-checked {
+
+    .drawer-icon_bar{
+
+      &:nth-child(1),
+      &:nth-child(3) {
+        top: 9px;
+      }
+
+      &:nth-child(1) {
+        transform: rotate(45deg);
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+
+      &:nth-child(2) {
+        display: none;
+      }
+
+    }
+  }
 }
 
 .drawer-icon_bar {
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  left: 0;
+  background: $main-color;
+  transition: top 0.3s, transform 0.3s;
 
+  &:nth-child(1) {
+    top: 0;
+  }
+
+  &:nth-child(2) {
+    top: 8px;
+  }
+
+  &:nth-child(3) {
+    top: 16px;
+  }
 }
 
