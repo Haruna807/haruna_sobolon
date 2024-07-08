@@ -160,3 +160,26 @@ body {
 .drawer-icon_bar:nth-child(3) {
   top: 16px;
 }
+
+@media screen and (min-width:768px) {
+  .fv__image {
+    max-width: 990px;
+    margin-left: auto;
+    display: none;
+  }
+}
+.fv__content {
+  margin-top: 30px;
+}
+
+.fv__title {
+  font-size: 26px;
+  font-weight: 600;
+}
+.fv__title br {
+  display: none;
+}
+
+.fv__text {
+  margin-top: 16px;
+}

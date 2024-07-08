@@ -23,12 +23,12 @@
       <h1 class="header__logo">
         <a href="/"><img src="./img/logo.png" alt="sobolon"></a>
       </h1>
-      <button type="button" id="js-drawer-icon" class="header_icon drawer-icon">
+      <button type="button" id="js-drawer-button" class="header_icon drawer-icon">
         <span class="drawer-icon_bar"></span>
         <span class="drawer-icon_bar"></span>
         <span class="drawer-icon_bar"></span>
       </button>
-      <nav class="header__nav">
+      <nav id="js-drawer-content" class="header__nav">
         <ul class="header__lists">
           <li class="header__list"><a href="#concept" class="header__link">Concept</a></li>
           <li class="header__list"><a href="#feature" class="header__link">Feature</a></li>
@@ -39,6 +39,25 @@
       </nav>
     </div>
   </header>
+
+  <main class="main">
+
+    <div class="fv">
+      <div class="fv__inner inner">
+        <picture class="fv__image">
+          <source media="(min-width: 768px)" srcset="./img/fv.png">
+          <img src="./img/sp/fv.png" alt="">
+        </picture>
+        <div class="fv__content">
+          <p class="fv__title">“可愛い” で<br>地球を守る！</p>
+          <p class="fv__text">
+            海洋マイクロプラスチックを素材とした<br>ハンドメイドアクセサリー「sobolon」
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </main>
 
 
   <script src="./js/script.js"></script>
