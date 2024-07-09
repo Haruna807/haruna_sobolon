@@ -41,6 +41,8 @@ body {
   }
 }
 
+// ヘッダー
+
 .header {
   height: $header-height-sp;
 
@@ -177,19 +179,21 @@ body {
   }
 }
 
+// ファーストビュー
+
 .fv {
 
 }
 
 .fv__inner {
-
+  position: relative;
 }
 
 .fv__image {
   @include mq("md") {
     max-width: 990px;
     margin-left: auto;
-    display: none;
+    display: block;
   }
   img {
 
@@ -198,20 +202,93 @@ body {
 
 .fv__content {
   margin-top: 30px;
+
+  @include mq("md") {
+    position: absolute;
+    inset-block: 0;
+    margin-block: auto;
+    left: 0;
+    padding: 80px 40px;
+    height: fit-content;
+    background: #fff;
+  }
 }
 
 .fv__title {
   font-size: 26px;
   font-weight: 600;
+  line-height: 1.7;
 
   br {
     display: none;
+
+    @include mq("md") {
+      display: inline;
+    }
   }
 }
 
 .fv__text {
   margin-top: 16px;
 }
+
+// コンセプト
+.concept {
+  padding-top: 96px;
+}
+
+.concept__inner {
+
+}
+
+.inner {
+
+}
+
+.concept__title {
+
+}
+
+.section__title {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.section__title::after {
+  content: '';
+  width: 60px;
+  height: 1px;
+  display: inline-block;
+  background-color: $main-color;
+  position: absolute;
+  bottom: -28px;
+  left: calc(50% - 30px)
+}
+
+
+.concept__image {
+  margin-top: calc(28px + 46px);
+  img {
+  }
+}
+
+.concept__content {
+  margin-top: 34px;
+}
+
+.concept__lead {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.concept__text {
+  margin-top: 22px;
+}
+
+
 
 
 
