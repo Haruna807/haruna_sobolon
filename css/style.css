@@ -30,6 +30,26 @@ body {
   font-weight: 300;
 }
 
+@media screen and (min-width:600px) {
+  .hidden-sm {
+    display: none;
+  }
+}
+@media screen and (min-width:768px) {
+  .hidden-md {
+    display: none;
+  }
+}
+@media screen and (min-width:900px) {
+  .hidden-lg {
+    display: none;
+  }
+}
+@media screen and (min-width:1200px) {
+  .hidden-xl {
+    display: none;
+  }
+}
 .inner {
   padding-inline: 15px;
 }
@@ -232,7 +252,12 @@ body {
 }
 
 .concept {
-  padding-top: 96px;
+  margin-top: 96px;
+}
+@media screen and (min-width:768px) {
+  .concept {
+    margin-top: 160px;
+  }
 }
 
 @media screen and (min-width:768px) {
@@ -276,9 +301,28 @@ body {
 .feature {
   margin-top: 96px;
 }
+@media screen and (min-width:768px) {
+  .feature {
+    margin-top: 160px;
+    margin-bottom: 160px;
+  }
+}
 
 .feature__content {
   margin-top: 74px;
+}
+@media screen and (min-width:768px) {
+  .feature__content {
+    margin-top: 88px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 90px;
+  }
 }
 
 .feature__card {
@@ -290,5 +334,62 @@ body {
 
 .feature__card-text {
   padding: 26px;
+  font-weight: 600;
   text-align: center;
+}
+
+.about {
+  background: url(../img/sp/about-bg.png) no-repeat top center/cover;
+  position: relative;
+  padding-block: 180px 50px;
+  padding-inline: 15px 20px;
+}
+@media screen and (min-width:768px) {
+  .about {
+    background-image: url(../img/about-bg.png);
+    padding-block: 123px 122px;
+    padding-left: 40px;
+  }
+}
+.about::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.12);
+  z-index: 1;
+}
+
+.about___content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+@media screen and (min-width:768px) {
+  .about___content {
+    width: 50%;
+  }
+}
+
+.about__title {
+  font-size: 20px;
+  font-weight: 600;
+}
+@media screen and (min-width:768px) {
+  .about__title {
+    font-size: 22px;
+  }
+}
+
+.about__text {
+  margin-top: 24px;
+  font-size: 14px;
+  font-weight: 600;
+}
+@media screen and (min-width:768px) {
+  .about__text {
+    font-size: 16px;
+  }
 }
