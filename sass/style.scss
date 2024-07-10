@@ -21,6 +21,31 @@ $breakpoints: (
   }
 }
 
+// 共通
+
+.section__title {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 100%;
+  text-align: center;
+  position: relative;
+
+  @include mq("md") {
+    font-size: 40px;
+  }
+}
+
+.section__title::after {
+  content: '';
+  width: 60px;
+  height: 1px;
+  display: inline-block;
+  background-color: $main-color;
+  position: absolute;
+  bottom: -28px;
+  left: calc(50% - 30px)
+}
+
 
 body {
   font-family: $font-base;
@@ -249,33 +274,26 @@ body {
 
 }
 
-.section__title {
-  font-size: 30px;
-  font-weight: 600;
-  line-height: 100%;
-  text-align: center;
-  position: relative;
-}
-
-.section__title::after {
-  content: '';
-  width: 60px;
-  height: 1px;
-  display: inline-block;
-  background-color: $main-color;
-  position: absolute;
-  bottom: -28px;
-  left: calc(50% - 30px)
+.concept__content {
+  @include mq("md") {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 
 .concept__image {
   margin-top: calc(28px + 46px);
   img {
+    @include mq("md") {
+      max-width: 600px;
+      margin-right: 80px;
+    }
   }
 }
 
-.concept__content {
+.concept__description {
   margin-top: 34px;
 }
 
@@ -287,6 +305,53 @@ body {
 .concept__text {
   margin-top: 22px;
 }
+
+// Feature
+
+.feature {
+  margin-top: 96px;
+}
+
+.feature__inner {
+
+}
+
+.feature__title {
+
+}
+
+
+.feature__content {
+  margin-top: calc(28px + 46px);
+}
+
+.feature__card {
+  background: #fff;
+  box-shadow: 3px 3px 15px 0px rgba(96, 96, 96, 0.16);
+  margin-bottom: 50px;
+}
+
+.feature__card-image {
+
+}
+
+.feature__card-text {
+  padding: 26px;
+  text-align: center;
+}
+
+.feature__description {
+
+}
+
+.feature__description-lead {
+
+}
+
+.feature__description-text {
+
+}
+
 
 
 
