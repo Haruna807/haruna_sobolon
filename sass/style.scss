@@ -90,6 +90,37 @@ body {
   }
 }
 
+// ボタン
+
+.section__button {
+  margin-top: 42px;
+  display: flex;
+  justify-content: center;
+
+  @include mq("md") {
+    margin-top: 44px;
+  }
+}
+
+.button {
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.02px;
+  display: flex;
+  width: 158px;
+  padding: 12px 4px;
+  justify-content: center;
+  align-items: center;
+  color: $main-color;
+  border: 1px solid var(--3-ea-1-d-1, #3EA1D1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+  background-color: $main-color;
+  color: #fff;
+}
+
 // ヘッダー
 
 .header {
@@ -459,14 +490,16 @@ body {
   margin-top: calc(28px + 46px);
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 40px;
 
   @include mq("md") {
     margin-top: calc(24px + 64px);
     flex-direction: row;
-    justify-content: center;
     gap: 80px;
-    max-width: 100%;
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -491,34 +524,79 @@ body {
   margin-top: 10px;
 }
 
-.products__button {
-  margin-top: 42px;
+// News
+
+.news {
+  margin-top: 96px;
+}
+
+.news__inner {
+
+}
+
+.news__title {
+
+}
+
+.news__cards {
+  margin-top: calc(28px + 46px);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 28px;
 
   @include mq("md") {
-    margin-top: 44px;
+    margin-top: calc(24px + 64px);
+    max-width: 1040px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
-.button {
-  text-decoration: none;
-  font-size: 14px;
-  letter-spacing: 0.02px;
-  display: flex;
-  width: 158px;
-  padding: 12px 4px;
-  justify-content: center;
-  align-items: center;
-  color: $main-color;
-  border: 1px solid var(--3-ea-1-d-1, #3EA1D1);
-  transition: background-color 0.3s ease, color 0.3s ease;
+.news-card {
+  border-bottom: solid 1px #E0E0E0;
+
+  @include mq("md") {
+    display: flex;
+    gap: 40px;
+    padding-bottom: 24px;
+  }
 }
 
-.button:hover {
-  background-color: $main-color;
-  color: #fff;
+.news-card__image {
+  img {
+    @include mq("md") {
+      max-width: 260px;
+    }
+  }
 }
+
+.news-card__contents {
+  margin-top: 16px;
+  margin-bottom: 28px;
+
+  @include mq("md") {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.news-card__date {
+  font-size: 14px;
+}
+
+.news-card__title {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.news-card__text {
+  margin-top: 14px;
+  color: #888;
+  font-size: 14px;
+}
+
+
 
 
 
