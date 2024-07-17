@@ -239,6 +239,117 @@
       </div>
     </section>
 
+    <section class="contact">
+      <div class="contact__inner inner">
+        <div class="contact__title">
+          <h2 class="section__title">Contact</h2>
+        </div>
+        <p class="required-text"><span class="required">＊</span>は入力必須項目です</p>
+        <form class="contact_form">
+          <div class="contact_fields">
+              <div class="contact_field">
+                <div class="form-field">
+                    <div class="form-field_head">
+                      <label for="your-name" class="form-field_label"
+                          >お名前<span class="req">＊</span></label
+                        >
+                    </div>
+                  <div class="form-field_item">
+                    <input
+                      class="form-text"
+                      type="text"
+                      name="your-name"
+                      id="your-name"
+                      placeholder=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="contact_field">
+                <div class="form-field">
+                  <div class="form-field_head">
+                    <label for="your-email" class="form-field_label"
+                        >メールアドレス<span class="req">＊</span></label
+                      >
+                  </div>
+                  <div class="form-field_item">
+                    <input
+                      class="form-text"
+                      type="email"
+                      name="your-email"
+                      id="your-email"
+                      placeholder=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="contact_field">
+                <div class="form-field">
+                  <div class="form-field_head">
+                    <div class="form-field_label">法人/個人の選択<span class="req">＊</span></div>
+                  </div>
+                  <div class="form-field_item">
+                    <div class="form-field_radios">
+                      <label class="form-field_radio form-radio">
+                        <input
+                          class="form-radio_input"
+                          type="radio"
+                          name="corporation"
+                        />
+                        <span class="form-radio_text">法人</span>
+                      </label>
+                      <label class="form-field_radio form-radio">
+                        <input
+                          class="form-radio_input"
+                          type="radio"
+                          name="individual"
+                        />
+                        <span class="form-radio_text">個人</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="contact_field">
+                <div class="form-field">
+                  <div class="form-field_head">
+                    <label for="your-message" class="form-field_label"
+                      >お問い合わせ内容<span class="req">＊</span></label
+                    >
+                  </div>
+                  <div class="form-field_item">
+                    <textarea
+                      name="your-message"
+                      id="your-message"
+                      class="form-textarea"
+                      cols="30"
+                      rows="5"
+                      placeholder=""
+                    ></textarea>
+                  </div>
+                </div>
+            </div>
+            <div class="contact_privacy">
+              <label class="form-checkbox">
+                <input
+                  type="checkbox"
+                  name="your-privacy"
+                  class="form-checkbox_input"
+                />
+                <span class="form-checkbox_text">
+                  <a href="" target="_blank">プライバシーポリシー</a
+                  >に同意します。</span
+                >
+              </label>
+            </div>
+            <div class="contact_button">
+              <input type="submit" value="送信する" class="button" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
   </main>
 
 
