@@ -702,6 +702,7 @@ body {
   opacity: 0.7;
   background: $main-color;
   color: #fff;
+  display: inline;
 }
 
 .req {
@@ -710,7 +711,7 @@ body {
 }
 
 .form-field_item {
-
+  margin-top: 3px;
 }
 
 .form-text {
@@ -742,27 +743,42 @@ body {
 }
 
 .contact_privacy {
-
+  text-align: center;
 }
 
 .form-checkbox {
 
 }
 
-.form-checkbox_input {
-
+.form-checkbox input[type="checkbox"] {
+  display: none;
 }
 
-.form-checkbox_text {
+.form-checkbox_input {
+  
+}
 
+
+.form-checkbox_text {
+  a {
+    color: $main-color;
+    text-decoration: underline;
+  }
 }
 
 .contact_button {
-
+  text-align: center;
+  margin-top: 23px;
 }
 
 .button {
 
+}
+
+.contact-button {
+  background: #fff;
+  display: block;
+  margin: 0 auto;
 }
 
 

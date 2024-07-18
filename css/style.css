@@ -658,9 +658,38 @@ body {
   opacity: 0.7;
   background: #3EA1D1;
   color: #fff;
+  display: inline;
 }
 
 .req {
   color: #E7728E;
   padding-left: 4px;
+}
+
+.form-field_item {
+  margin-top: 3px;
+}
+
+.contact_privacy {
+  text-align: center;
+}
+
+.form-checkbox input[type=checkbox] {
+  display: none;
+}
+
+.form-checkbox_text a {
+  color: #3EA1D1;
+  text-decoration: underline;
+}
+
+.contact_button {
+  text-align: center;
+  margin-top: 23px;
+}
+
+.contact-button {
+  background: #fff;
+  display: block;
+  margin: 0 auto;
 }
