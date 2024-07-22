@@ -112,14 +112,18 @@ body {
   justify-content: center;
   align-items: center;
   color: $main-color;
-  border: 1px solid var(--3-ea-1-d-1, #3EA1D1);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 1px solid var(--3-ea-1-d-1, $main-color);
+
+  @include mq("md") {
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      background-color: $main-color;
+      color: #fff;
+    }
+  }
 }
 
-.button:hover {
-  background-color: $main-color;
-  color: #fff;
-}
 
 // ヘッダー
 
@@ -207,6 +211,11 @@ body {
   @include mq("md") {
     color: $text-color;
     font-size: 16px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $main-color;
+  }
   }
 }
 
@@ -530,6 +539,11 @@ body {
 .products-card__image {
   img {
     max-width: 263px;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.1);
+  }
   }
 }
 
@@ -584,9 +598,15 @@ body {
 
 .news-card__image {
   img {
+    transition: transform 0.2s ease;
+
     @include mq("md") {
       max-width: 260px;
     }
+
+    &:hover {
+      transform: scale(1.1);
+  }
   }
 }
 
@@ -620,7 +640,7 @@ body {
 
 .concept2 {
   margin-top: 160px;
-  margin-bottom: 160px;
+  margin-bottom: 96px;
 }
 
 .concept2__description {
@@ -659,6 +679,16 @@ body {
 .contact {
   padding-top: 56px;
   background: url(../img/sp/contact_bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include mq("md") {
+    background: url(../img/contact_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 .contact__inner {
@@ -680,6 +710,7 @@ body {
 
 .contact_form {
   margin-top: 28px;
+  padding-bottom: 56px;
 }
 
 .contact_fields {
@@ -691,10 +722,16 @@ body {
 }
 
 .form-field {
-
+  @include mq("md") {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .form-field_head {
+  @include mq("md") {
+    width: 180px;
+  }
 }
 
 .form-field_label {
@@ -703,6 +740,10 @@ body {
   background: $main-color;
   color: #fff;
   display: inline;
+
+ @include mq("md") {
+  clip-path: polygon(93% 0%, 100% 50%, 93% 100%, 0% 100%, 0 50%, 0% 0%);
+ }
 }
 
 .req {
@@ -755,7 +796,7 @@ body {
 }
 
 .form-checkbox_input {
-  
+
 }
 
 
@@ -780,6 +821,86 @@ body {
   display: block;
   margin: 0 auto;
 }
+
+// 
+
+// footer
+
+.footer {
+  text-align: center;
+}
+
+.footer_inner {
+  padding-top: 40px;
+  padding-bottom: 10px;
+
+  @include mq("md") {
+    padding-bottom: 14px;
+  }
+}
+
+.footer__contents {
+
+}
+
+
+
+.footer__logo {
+  width: 120px;
+  margin-inline: auto;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.footer-info-links {
+  margin-top: 22px;
+  font-size: 12px;
+
+  @include mq("md") {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+  }
+}
+
+.footer-info-link1 {
+
+}
+
+.footer-info-link2 {
+  margin-top: 12px;
+
+  @include mq("md") {
+    margin-top: 0;
+  }
+}
+
+.sns-btn {
+  margin-top: 18px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+
+  @include mq("md") {
+    margin-top: 20px;
+    margin-bottom: 28px;
+  }
+}
+
+.sns-icon {
+  width: 21px;
+}
+
+.footer__copyright {
+  color: #888;
+  font-size: 12px;
+}
+
+
 
 
 
