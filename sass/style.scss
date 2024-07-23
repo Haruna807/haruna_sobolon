@@ -828,10 +828,17 @@ body {
 .contact {
   padding-block: 56px;
   background: url(../img/contact_bg.png) no-repeat center center / cover;
+
+  @include mq("md") {
+    padding-block: 80px;
+  }
 }
 
 .contact__inner {
-
+  @include mq("md") {
+    max-width: calc(510px + 40px *2);
+    padding-inline: 40px;
+  }
 }
 
 .contact__form {
@@ -862,6 +869,10 @@ body {
   display: flex;
   flex-direction: column;
   gap: 32px;
+
+  @include mq("md") {
+    margin-top: 19px;
+  }
 }
 
 .contact__item {
@@ -869,10 +880,21 @@ body {
 }
 
 .contact-control {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 
+  @include mq("md") {
+    flex-direction: row;
+    gap: 10px;
+  }
 }
 
 .contact-control__head {
+  @include mq("md") {
+    width: 180px;
+    flex-shrink: 0;
+  }
 
 }
 
@@ -885,61 +907,152 @@ body {
   gap: 4px;
   align-items: center;
   padding: 4px 16px;
+
+  @include mq("md") {
+    width: 100%;
+    justify-content: center;
+    font-size: 18px;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    padding-inline: 4px;
+    clip-path: polygon(0% 0%, 97% 0, 100% 50%, 97% 100%, 0% 100%);
+  }
 }
 
 .form-label__required {
   color: #E7728E;
   font-size: 10px;
   font-weight: 600;
+
+  @include mq("md") {
+    font-size: 12px;
+  }
 }
 
 .contact-control__input {
-
+  @include mq("md") {
+    flex-grow: 1;
+  }
 }
 
 .form-text {
-
+  // 標準のラジオボタンを見えなくする
+  width: 100%;
+  height: 40px;
+  border: 0;
+  font-size: 16px;
+  background:#FFF;
+  box-shadow: 5px 6px 16px 0px rgba(96, 96, 96, 0.16);
 }
 
 .contact-control__radios {
-
+  display: flex;
+  align-items: center;
 }
 
 .form-radio {
+  position: relative;
 
 }
 
 .form-radio__input {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
 
+  &:checked + .form-radio__text {
+    background-color: $main-color;
+    color: #fff;
+  }
 }
 
 .form-radio__text {
-
+  font-size: 16px;
+  letter-spacing: 0.026px;
+  color: $main-color;
+  border: 1px solid #FFF;
+  background: #FFF;
+  width: 80px;
+  height: 40px;
+  display: grid;
+  place-items: center;
 }
 
 .form-textarea {
-
+  width: 100%;
+  height: 122px;
+  background:#FFF;
+  box-shadow: 5px 6px 16px 0px rgba(96, 96, 96, 0.16);
+  resize: vertical;
+  font-size: 16px;
+  border: 0;
 }
 
 .contact__footer {
+  margin-top: 28px;
 
+  @include mq("md") {
+    margin-top: 32px;
+  }
 }
 
 .contact__privacy {
-
+  text-align: center;
 }
 
 .form-checkbox {
-
+  position: relative;
 }
 
 .form-checkbox__input {
+  // 標準のチェックボックスを見えなくする
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
 
+  &:checked + .form-checkbox__text {
+    &::after {
+      opacity: 1;
+    }
+  }
 }
 
 .form-checkbox__text {
-  a {
+  font-size: 16px;
+  padding-left: 30px;
+  // ↑チェックボックスまでの距離＋チェックボックスの幅
 
+  a {
+    text-decoration-line: underline;
+    color: $main-color;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    inset-block: 0;
+    margin-block: auto;
+  }
+
+  &::before {
+    width: 22px;
+    height: 22px;
+    background: #fff;
+    border: 1px solid $main-color;
+  }
+
+  &::after {
+    opacity: 0;
+    width: 19.414px;
+    height: 14.621px;
+    left: 1.29px;
+    background: url(../img/check-icon.png) no-repeat center center / contain;
   }
 }
 
@@ -948,6 +1061,10 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 23px;
+
+  @include mq("md") {
+    margin-top: 44px;
+  }
 }
 
 .button {
