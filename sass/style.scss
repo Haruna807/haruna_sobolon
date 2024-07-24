@@ -23,35 +23,35 @@ $breakpoints: (
 
 // 共通
 
-.section__title {
+.heading {
   font-size: 30px;
   font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: center;
   line-height: 100%;
-  text-align: center;
-  position: relative;
+
+  &::after {
+    content: '';
+    width: 60px;
+    height: 1px;
+    background-color: $main-color;
+  }
 
   @include mq("md") {
     font-size: 40px;
+    gap: 24px;
   }
 }
 
-.section__title::after {
-  content: '';
-  width: 60px;
-  height: 1px;
-  display: inline-block;
-  background-color: $main-color;
-  position: absolute;
-  bottom: -28px;
-  left: calc(50% - 30px)
-}
 
 
 body {
   font-family: $font-base;
   color: $text-color;
   font-size: 16px;
-  line-height: 170%;
+  line-height: 1.7;
   font-weight: 300;
 
 }
@@ -90,6 +90,22 @@ body {
   }
 }
 
+.section {
+
+}
+
+.section__head {
+
+}
+
+.section__contents {
+  margin-top: 46px;
+
+  @include mq("md") {
+    margin-top: 64px;
+  }
+}
+
 // ボタン
 
 .section__button {
@@ -103,26 +119,21 @@ body {
 }
 
 .button {
-  text-decoration: none;
+  display: inline-block;
+  min-width: 158px;
+  padding: calc(12px - 1px);
+  text-align: center;
+  border: 1px solid $main-color;
+  background: #fff;
+  color: $main-color;
   font-size: 14px;
   letter-spacing: 0.02px;
-  display: flex;
-  width: 158px;
-  padding: 12px 4px;
-  justify-content: center;
-  align-items: center;
-  color: $main-color;
-  border: 1px solid var(--3-ea-1-d-1, $main-color);
-  background-color: #fff;
-
-  @include mq("md") {
-    transition: background-color 0.3s ease, color 0.3s ease;
+  transition: color 0.3s, background-color 0.3s;
 
     &:hover {
-      background-color: $main-color;
+      background: $main-color;
       color: #fff;
     }
-  }
 }
 
 
@@ -277,6 +288,15 @@ body {
   }
 }
 
+.main {
+  display: grid;
+  gap: 96px;
+
+  @include mq("md") {
+    gap: 160px;
+  }
+}
+
 // ファーストビュー
 
 .fv {
@@ -336,46 +356,44 @@ body {
 
 // コンセプト
 .concept {
-  margin-top: 96px;
 
-  @include mq("md") {
-    margin-top: 160px;
-  }
 }
 
 .concept__inner {
 
 }
 
-.inner {
-
-}
-
-.concept__title {
-
-}
-
 .concept__contents {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  
   @include mq("md") {
-    display: flex;
     flex-direction: row;
+    gap: calc(80px/ 1200px * 100%);
     align-items: center;
   }
 }
 
 
 .concept__image {
-  margin-top: calc(28px + 46px);
+  text-align: center;
+
+  @include mq("md") {
+    width: calc(600px / 1200px * 100%);
+    flex-shrink: 0;
+  }
+
   img {
-    @include mq("md") {
-      max-width: 600px;
-      margin-right: 80px;
-    }
+    width: 100%;
   }
 }
 
-.concept__description {
-  margin-top: 34px;
+.concept__message {
+
+  @include mq("md") {
+    flex-grow: 1;
+  }
 }
 
 .concept__lead {
@@ -397,12 +415,7 @@ body {
 // Feature
 
 .feature {
-  margin-top: 96px;
 
-  @include mq("md") {
-    margin-top: 160px;
-    margin-bottom: 160px;
-  }
 }
 
 .feature__inner {
@@ -415,10 +428,8 @@ body {
 
 
 .feature__contents {
-  margin-top: calc(28px + 46px);
 
   @include mq("md") {
-    margin-top: calc(24px + 64px);
     display: flex;
     flex-direction: row;
     gap: 90px;
@@ -504,7 +515,7 @@ body {
 // products
 
 .products {
-  margin-top: 96px;
+
 }
 
 .products__inner {
@@ -517,14 +528,12 @@ body {
 }
 
 .products__contents {
-  margin-top: calc(28px + 46px);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
 
   @include mq("md") {
-    margin-top: calc(24px + 64px);
     flex-direction: row;
     gap: 80px;
     max-width: 940px;
@@ -562,7 +571,7 @@ body {
 // News
 
 .news {
-  margin-top: 96px;
+
 }
 
 .news__inner {
@@ -574,13 +583,11 @@ body {
 }
 
 .news__cards {
-  margin-top: calc(28px + 46px);
   display: flex;
   flex-direction: column;
   gap: 28px;
 
   @include mq("md") {
-    margin-top: calc(24px + 64px);
     max-width: 1040px;
     margin-left: auto;
     margin-right: auto;
@@ -640,8 +647,7 @@ body {
 // concept2
 
 .concept2 {
-  margin-top: 160px;
-  margin-bottom: 96px;
+
 }
 
 .concept2__description {
@@ -853,11 +859,15 @@ body {
   font-size: 14px;
   font-weight: 600;
   text-align: center;
+  margin-top: 46px;
 
   .is-required {
     color: #E7728E;
   }
 
+  @include mq("md") {
+    margin-top: 64px;
+  }
 }
 
 .is-required {
