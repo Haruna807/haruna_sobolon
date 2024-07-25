@@ -75,21 +75,6 @@ body {
   }
 }
 
-.section__button {
-  margin-top: 42px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-@media screen and (min-width:768px) {
-  .section__button {
-    margin-top: 44px;
-  }
-}
-
 .button {
   display: inline-block;
   min-width: 158px;
@@ -393,11 +378,18 @@ body {
   }
 }
 
+.feature__cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 50px;
+}
 @media screen and (min-width:768px) {
-  .feature__contents {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+  .feature__cards {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -410,7 +402,13 @@ body {
   background: #fff;
   -webkit-box-shadow: 3px 3px 15px 0px rgba(96, 96, 96, 0.16);
           box-shadow: 3px 3px 15px 0px rgba(96, 96, 96, 0.16);
-  margin-bottom: 50px;
+}
+
+.feature__card-image {
+  text-align: center;
+}
+.feature__card-image img {
+  width: 100%;
 }
 
 .feature__card-text {
@@ -423,13 +421,11 @@ body {
   background: url(../img/sp/about-bg.png) no-repeat top center/cover;
   position: relative;
   padding-block: 180px 50px;
-  padding-inline: 15px 20px;
 }
 @media screen and (min-width:768px) {
   .about {
     background-image: url(../img/about-bg.png);
     padding-block: 123px 122px;
-    padding-left: 40px;
   }
 }
 .about::after {
@@ -480,8 +476,14 @@ body {
   padding-left: 56px;
   padding-right: 56px;
 }
+@media screen and (min-width:768px) {
+  .products__inner {
+    max-width: 1020px;
+    padding-inline: 40px;
+  }
+}
 
-.products__contents {
+.products__cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -495,24 +497,27 @@ body {
   gap: 40px;
 }
 @media screen and (min-width:768px) {
-  .products__contents {
+  .products__cards {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    gap: 80px;
-    max-width: 940px;
+    gap: 50px;
     margin-left: auto;
     margin-right: auto;
   }
 }
-
-.products-card {
-  max-width: 260px;
+@media screen and (min-width:900px) {
+  .products__cards {
+    gap: 80px;
+  }
 }
 
+.products-card__image {
+  text-align: center;
+}
 .products-card__image img {
-  max-width: 263px;
+  width: 100%;
   -webkit-transition: -webkit-transform 0.2s ease;
   transition: -webkit-transform 0.2s ease;
   transition: transform 0.2s ease;
@@ -523,8 +528,16 @@ body {
           transform: scale(1.1);
 }
 
-.products-card__title {
+.products-card__body {
   margin-top: 20px;
+}
+@media screen and (min-width:768px) {
+  .products-card__body {
+    margin-top: 18px;
+  }
+}
+
+.products-card__title {
   font-size: 14px;
 }
 
@@ -532,6 +545,16 @@ body {
   color: #989898;
   font-size: 14px;
   margin-top: 10px;
+}
+
+.products__button {
+  text-align: center;
+  margin-top: 42px;
+}
+@media screen and (min-width:768px) {
+  .products__button {
+    margin-top: 44px;
+  }
 }
 
 .news__cards {

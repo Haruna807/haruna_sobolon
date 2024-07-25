@@ -108,16 +108,6 @@ body {
 
 // ボタン
 
-.section__button {
-  margin-top: 42px;
-  display: flex;
-  justify-content: center;
-
-  @include mq("md") {
-    margin-top: 44px;
-  }
-}
-
 .button {
   display: inline-block;
   min-width: 158px;
@@ -422,28 +412,30 @@ body {
 
 }
 
-.feature__title {
 
-}
-
-
-.feature__contents {
+.feature__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 
   @include mq("md") {
-    display: flex;
     flex-direction: row;
     gap: 90px;
   }
+
 }
 
 .feature__card {
   background: #fff;
   box-shadow: 3px 3px 15px 0px rgba(96, 96, 96, 0.16);
-  margin-bottom: 50px;
 }
 
 .feature__card-image {
+  text-align: center;
 
+  img {
+    width: 100%;
+  }
 }
 
 .feature__card-text {
@@ -458,12 +450,10 @@ body {
   background: url(../img/sp/about-bg.png) no-repeat top center / cover;
   position: relative;
   padding-block: 180px 50px;
-  padding-inline: 15px 20px;
 
   @include mq("md") {
     background-image: url(../img/about-bg.png);
     padding-block: 123px 122px;
-    padding-left: 40px;
   }
 
   &::after {
@@ -521,13 +511,18 @@ body {
 .products__inner {
   padding-left: 56px;
   padding-right: 56px;
+
+  @include mq("md") {
+    max-width: calc(940px + 40px * 2);
+    padding-inline: 40px;
+  }
 }
 
 .products__title {
 
 }
 
-.products__contents {
+.products__cards {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -535,20 +530,24 @@ body {
 
   @include mq("md") {
     flex-direction: row;
-    gap: 80px;
-    max-width: 940px;
+    gap: 50px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  @include mq("lg") {
+    gap: 80px;
   }
 }
 
 .products-card {
-  max-width: 260px;
 }
 
 .products-card__image {
+  text-align: center;
+
   img {
-    max-width: 263px;
+    width: 100%;
     transition: transform 0.2s ease;
 
     &:hover {
@@ -557,8 +556,15 @@ body {
   }
 }
 
-.products-card__title {
+.products-card__body {
   margin-top: 20px;
+
+  @include mq("md") {
+    margin-top: 18px;
+  }
+}
+
+.products-card__title {
   font-size: 14px;
 }
 
@@ -566,6 +572,15 @@ body {
   color: #989898;
   font-size: 14px;
   margin-top: 10px;
+}
+
+.products__button {
+  text-align: center;
+  margin-top: 42px;
+
+  @include mq("md") {
+    margin-top: 44px;
+  }
 }
 
 // News
