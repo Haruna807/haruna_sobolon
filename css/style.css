@@ -137,6 +137,15 @@ body {
   width: 120px;
   display: block;
 }
+@media screen and (min-width:768px) {
+  .header__logo a {
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+  .header__logo a:hover {
+    opacity: 0.6;
+  }
+}
 
 .header__nav {
   background: #3EA1D1;
@@ -530,6 +539,10 @@ body {
         -ms-flex: 1;
             flex: 1;
   }
+  .products-card:hover .products-card__image img {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
 }
 
 .products-card__image {
@@ -537,14 +550,17 @@ body {
 }
 .products-card__image img {
   width: 100%;
-  -webkit-transition: -webkit-transform 0.2s ease;
-  transition: -webkit-transform 0.2s ease;
-  transition: transform 0.2s ease;
-  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
 }
-.products-card__image img:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+@media screen and (min-width:768px) {
+  .products-card__image {
+    overflow: hidden;
+  }
+  .products-card__image img {
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    transition: transform 0.4s, -webkit-transform 0.4s;
+  }
 }
 
 .products-card__body {
@@ -615,24 +631,25 @@ body {
         align-self: flex-start;
     gap: 40px;
   }
-}
-
-.news-card__image img {
-  -webkit-transition: -webkit-transform 0.2s ease;
-  transition: -webkit-transform 0.2s ease;
-  transition: transform 0.2s ease;
-  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
-}
-@media screen and (min-width:768px) {
-  .news-card__image img {
-    max-width: 260px;
-    -ms-flex-negative: 0;
-        flex-shrink: 0;
+  .news-card:hover .news-card__image img {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
 }
-.news-card__image img:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+
+@media screen and (min-width:768px) {
+  .news-card__image {
+    width: 260px;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    overflow: hidden;
+  }
+  .news-card__image img {
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    transition: transform 0.4s, -webkit-transform 0.4s;
+  }
 }
 
 .news-card__contents {
@@ -907,6 +924,11 @@ body {
   -webkit-box-shadow: 5px 6px 16px 0px rgba(96, 96, 96, 0.16);
           box-shadow: 5px 6px 16px 0px rgba(96, 96, 96, 0.16);
 }
+.form-text:focus {
+  outline: #3EA1D1 auto 1px;
+  -webkit-box-shadow: 5px 6px 16px 0px rgba(62, 161, 209, 0.2);
+          box-shadow: 5px 6px 16px 0px rgba(62, 161, 209, 0.2);
+}
 
 .contact-control__radios {
   display: -webkit-box;
@@ -932,6 +954,11 @@ body {
   background-color: #3EA1D1;
   color: #fff;
 }
+.form-radio__input:focus + .form-radio__text {
+  outline: #3EA1D1 auto 1px;
+  -webkit-box-shadow: 5px 6px 16px 0px rgba(62, 161, 209, 0.24);
+          box-shadow: 5px 6px 16px 0px rgba(62, 161, 209, 0.24);
+}
 
 .form-radio__text {
   font-size: 16px;
@@ -954,6 +981,11 @@ body {
   resize: vertical;
   font-size: 16px;
   border: 0;
+}
+.form-textarea:focus {
+  outline: #3EA1D1 auto 1px;
+  -webkit-box-shadow: 5px 6px 16px 0px rgba(62, 161, 209, 0.2);
+          box-shadow: 5px 6px 16px 0px rgba(62, 161, 209, 0.2);
 }
 
 .contact__footer {
@@ -982,6 +1014,11 @@ body {
 }
 .form-checkbox__input:checked + .form-checkbox__text::after {
   opacity: 1;
+}
+.form-checkbox__input:focus + .form-checkbox__text::before {
+  outline: #3EA1D1 auto 1px;
+  -webkit-box-shadow: 5px 6px 16px 0px rgba(62, 161, 209, 0.24);
+          box-shadow: 5px 6px 16px 0px rgba(62, 161, 209, 0.24);
 }
 
 .form-checkbox__text {
@@ -1053,6 +1090,15 @@ body {
   display: block;
   margin-inline: auto;
 }
+@media screen and (min-width:768px) {
+  .footer__logo a img {
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+  .footer__logo a img:hover {
+    opacity: 0.6;
+  }
+}
 
 .footer__menu-items {
   margin-top: 23px;
@@ -1082,6 +1128,16 @@ body {
   font-size: 12px;
 }
 
+@media screen and (min-width:768px) {
+  .footer__menu-link {
+    -webkit-transition-duration: opacity 0.3s;
+            transition-duration: opacity 0.3s;
+  }
+  .footer__menu-link:hover {
+    opacity: 0.6;
+  }
+}
+
 .footer__sns-btn {
   margin-top: 12px;
   display: -webkit-box;
@@ -1100,6 +1156,16 @@ body {
 
 .footer__sns-icon {
   width: 18px;
+}
+
+@media screen and (min-width:768px) {
+  .footer__sns-link {
+    -webkit-transition-duration: opacity 0.3s;
+            transition-duration: opacity 0.3s;
+  }
+  .footer__sns-link:hover {
+    opacity: 0.6;
+  }
 }
 
 .footer__copyright {

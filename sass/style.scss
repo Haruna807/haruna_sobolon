@@ -167,7 +167,16 @@ body {
       width: 120px;
       display: block;
     }
+
+    @include mq("md") {
+      transition: opacity 0.3s;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
   }
+
 }
 
 .header__nav {
@@ -226,7 +235,7 @@ body {
 
     &:hover {
       color: $main-color;
-  }
+    }
   }
 }
 
@@ -553,6 +562,15 @@ body {
 .products-card {
   @include mq("md") {
     flex: 1;
+
+    &:hover {
+      .products-card__image {
+
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
   }
 }
 
@@ -561,11 +579,14 @@ body {
 
   img {
     width: 100%;
-    transition: transform 0.2s ease;
-
-    &:hover {
-      transform: scale(1.1);
   }
+
+  @include mq("md") {
+    overflow: hidden;
+
+    img {
+      transition: transform 0.4s;
+    }
   }
 }
 
@@ -637,23 +658,29 @@ body {
     display: flex;
     align-self: flex-start;
     gap: 40px;
+
+    &:hover {
+      .news-card__image {
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
   }
 }
 
 .news-card__image {
-  img {
-    transition: transform 0.2s ease;
-
     @include mq("md") {
-      max-width: 260px;
+      width: 260px;
       flex-shrink: 0;
-    }
+      overflow: hidden;
 
-    &:hover {
-      transform: scale(1.1);
-  }
-  }
+      img {
+        transition: transform 0.4s;
+      }
+    }
 }
+
 
 .news-card__contents {
   margin-top: 16px;
@@ -899,6 +926,11 @@ body {
   font-size: 16px;
   background:#FFF;
   box-shadow: 5px 6px 16px 0px rgba(96, 96, 96, 0.16);
+
+  &:focus {
+    outline: $main-color auto 1px;
+    box-shadow: 5px 6px 16px 0px rgba($main-color, 0.20);
+  }
 }
 
 .contact-control__radios {
@@ -922,6 +954,11 @@ body {
     background-color: $main-color;
     color: #fff;
   }
+
+  &:focus + .form-radio__text {
+    outline: $main-color auto 1px;
+    box-shadow: 5px 6px 16px 0px rgba($main-color, 0.24);
+  }
 }
 
 .form-radio__text {
@@ -944,6 +981,11 @@ body {
   resize: vertical;
   font-size: 16px;
   border: 0;
+
+  &:focus {
+    outline: $main-color auto 1px;
+    box-shadow: 5px 6px 16px 0px rgba($main-color, 0.20);
+  }
 }
 
 .contact__footer {
@@ -973,6 +1015,13 @@ body {
   &:checked + .form-checkbox__text {
     &::after {
       opacity: 1;
+    }
+  }
+
+  &:focus + .form-checkbox__text {
+    &::before {
+      outline: $main-color auto 1px;
+      box-shadow: 5px 6px 16px 0px rgba($main-color, 0.24);
     }
   }
 }
@@ -1053,6 +1102,14 @@ body {
       width: 120px;
       display: block;
       margin-inline: auto;
+
+      @include mq("md") {
+        transition: opacity 0.3s;
+
+        &:hover {
+          opacity: 0.6;
+        }
+      }
     }
   }
   
@@ -1076,7 +1133,13 @@ body {
 }
 
 .footer__menu-link {
+  @include mq("md") {
+    transition-duration: opacity 0.3s;
 
+    &:hover {
+      opacity: 0.6;
+    }
+  }
 }
 
 .footer__sns-btn {
@@ -1096,6 +1159,14 @@ body {
 
 .footer__sns-link {
   img {
+  }
+
+  @include mq("md") {
+    transition-duration: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.6;
+    }
   }
 }
 
