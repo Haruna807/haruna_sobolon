@@ -593,29 +593,37 @@ body {
 
 }
 
-.news__title {
-
-}
-
 .news__cards {
   display: flex;
   flex-direction: column;
   gap: 28px;
 
   @include mq("md") {
-    max-width: 1040px;
+    gap: 24px;
+    max-width: calc(1040px + 40px * 2);
+    padding-inline: 40px;
     margin-left: auto;
     margin-right: auto;
   }
 }
 
-.news-card {
+.news__card {
+  padding-bottom: 28px;
   border-bottom: solid 1px #E0E0E0;
 
   @include mq("md") {
-    display: flex;
-    gap: 40px;
     padding-bottom: 24px;
+  }
+
+
+}
+
+.news-card {
+
+  @include mq("md") {
+    display: flex;
+    align-self: flex-start;
+    gap: 40px;
   }
 }
 
@@ -624,7 +632,8 @@ body {
     transition: transform 0.2s ease;
 
     @include mq("md") {
-      max-width: 260px;
+      width: 260px;
+      flex-shrink: 0;
     }
 
     &:hover {
@@ -635,9 +644,9 @@ body {
 
 .news-card__contents {
   margin-top: 16px;
-  margin-bottom: 28px;
 
   @include mq("md") {
+    flex-grow: 1;
     margin-top: 0;
     margin-bottom: 0;
   }
@@ -645,18 +654,37 @@ body {
 
 .news-card__date {
   font-size: 14px;
+  display: block;
 }
 
 .news-card__title {
   margin-top: 10px;
   font-size: 16px;
   font-weight: 600;
+
+  @include mq("md") {
+    font-size: 18px;
+    margin-top: 16px;
+  }
 }
 
 .news-card__text {
   margin-top: 14px;
   color: #888;
   font-size: 14px;
+
+  @include mq("md") {
+    margin-top: 10px;
+  }
+}
+
+.news__button {
+  margin-top: 42px;
+  text-align: center;
+
+  @include mq("md") {
+    margin-top: 44px;
+  }
 }
 
 // concept2
@@ -667,25 +695,60 @@ body {
 
 .concept2__description {
   margin-top: 32px;
+
+  @include mq("md") {
+    flex-grow: 1;
+  }
 }
 
 .concept2__contents {
+  gap: 0;
+
   @include mq("md") {
     flex-direction: row-reverse;
+    align-items: center;
+    gap: 40px;
+  }
+
+  @include mq("lg") {
+    gap: 60px;
+  }
+
+  @include mq("xl") {
+    gap: 80px;
   }
 }
 
 .concept2__image {
-  @include mq("md") {
-    max-width: 600px;
-    margin-left: 80px;
+  text-align: center;
+
+  img {
+    width: 100%;
   }
+
+  @include mq("md") {
+    width: calc(600px / 1200px * 100%);
+    flex-shrink: 0;
+  }
+
 }
 
+
 .concept2__lead {
+  font-size: 20px;
+  font-weight: 600;
+
   @include mq("md") {
-    font-size: 28px;
+    font-size: 22px;
     line-height: 170%;
+  }
+
+  @include mq("lg") {
+    font-size: 25px;
+  }
+  
+  @include mq("xl") {
+    font-size: 28px;
   }
 }
 
@@ -697,154 +760,6 @@ body {
 }
 
 // contact
-
-// .contact {
-//   padding-top: 56px;
-//   background: url(../img/sp/contact_bg.png);
-//   background-size: cover;
-//   background-repeat: no-repeat;
-//   background-position: center;
-
-//   @include mq("md") {
-//     background: url(../img/contact_bg.png);
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//     background-position: center;
-//   }
-// }
-
-// .contact__inner {
-
-// }
-
-// .contact__title {
-//   color: $main-color;
-// }
-
-// .required-text {
-//   margin-top: calc(28px + 46px);
-//   text-align: center;
-// }
-
-// .required {
-//   color: #E7728E;
-// }
-
-// .contact_form {
-//   margin-top: 28px;
-//   padding-bottom: 56px;
-// }
-
-// .contact_fields {
-
-// }
-
-// .contact_field {
-//   margin-bottom: 32px;
-// }
-
-// .form-field {
-//   @include mq("md") {
-//     display: flex;
-//     justify-content: center;
-//   }
-// }
-
-// .form-field_head {
-//   @include mq("md") {
-//     width: 180px;
-//   }
-// }
-
-// .form-field_label {
-//   padding: 4px 16px;
-//   opacity: 0.7;
-//   background: $main-color;
-//   color: #fff;
-//   display: inline;
-
-//  @include mq("md") {
-//   clip-path: polygon(93% 0%, 100% 50%, 93% 100%, 0% 100%, 0 50%, 0% 0%);
-//  }
-// }
-
-// .req {
-//   color: #E7728E;
-//   padding-left: 4px;
-// }
-
-// .form-field_item {
-//   margin-top: 3px;
-// }
-
-// .form-text {
-
-// }
-
-// .form-field_radios {
-
-// }
-
-// .form-field_radio {
-
-// }
-
-// .form-radio {
-
-// }
-
-// .form-radio_input {
-
-// }
-
-// .form-radio_text {
-
-// }
-
-// .form-textarea {
-
-// }
-
-// .contact_privacy {
-//   text-align: center;
-// }
-
-// .form-checkbox {
-
-// }
-
-// .form-checkbox input[type="checkbox"] {
-//   display: none;
-// }
-
-// .form-checkbox_input {
-
-// }
-
-
-// .form-checkbox_text {
-//   a {
-//     color: $main-color;
-//     text-decoration: underline;
-//   }
-// }
-
-// .contact_button {
-//   text-align: center;
-//   margin-top: 23px;
-// }
-
-// .button {
-
-// }
-
-// .contact-button {
-//   background: #fff;
-//   display: block;
-//   margin: 0 auto;
-// }
-
-// contact_!!
 
 .contact {
   padding-block: 56px;
@@ -1092,86 +1007,89 @@ body {
   }
 }
 
-.button {
-
-}
-
 
 
 // footer
 
 .footer {
+  padding-block: 40px 7px;
+  background: #F7F7F7;
   text-align: center;
-}
-
-.footer_inner {
-  padding-top: 40px;
-  padding-bottom: 10px;
 
   @include mq("md") {
     padding-bottom: 14px;
   }
 }
 
-.footer__contents {
+.footer_inner {
 
 }
-
-
 
 .footer__logo {
-  width: 120px;
-  margin-inline: auto;
 
-  img {
-    max-width: 100%;
-    height: auto;
+  a {
+    img {
+      width: 120px;
+      display: block;
+      margin-inline: auto;
+    }
   }
+  
 }
 
-.footer-info-links {
+.footer__menu-items {
   margin-top: 22px;
-  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 
   @include mq("md") {
-    display: flex;
+    flex-direction: row;
     justify-content: center;
     gap: 32px;
   }
 }
 
-.footer-info-link1 {
+.footer__menu-item {
+  font-size: 12px;
+}
+
+.footer__menu-link {
 
 }
 
-.footer-info-link2 {
-  margin-top: 12px;
-
-  @include mq("md") {
-    margin-top: 0;
-  }
-}
-
-.sns-btn {
+.footer__sns-btn {
   margin-top: 18px;
-  margin-bottom: 24px;
   display: flex;
   justify-content: center;
   gap: 40px;
 
   @include mq("md") {
     margin-top: 20px;
-    margin-bottom: 28px;
   }
 }
 
-.sns-icon {
+.footer__sns-icon {
   width: 21px;
 }
 
+.footer__sns-link {
+  img {
+  }
+}
+
 .footer__copyright {
-  color: #888;
   font-size: 12px;
+  margin-top: 24px;
+
+  @include mq("md") {
+    margin-top: 28px;
+  }
+
+  small {
+    color: #888;
+    font-size: inherit;
+  }
 }
 
 
