@@ -21,6 +21,15 @@ $breakpoints: (
   }
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: $header-height-sp;
+
+  @include mq("md") {
+    scroll-padding-top: $header-height-pc;
+  }
+}
+
 // 共通
 
 .heading {
