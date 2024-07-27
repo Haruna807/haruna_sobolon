@@ -37,7 +37,7 @@ html {
   font-weight: 600;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 26px;
   align-items: center;
   line-height: 100%;
 
@@ -108,7 +108,7 @@ body {
 }
 
 .section__contents {
-  margin-top: 46px;
+  margin-top: 47px;
 
   @include mq("md") {
     margin-top: 64px;
@@ -401,8 +401,8 @@ body {
 }
 
 .concept__text {
-  margin-top: 22px;
-  font-size: 14px;
+  margin-top: 21px;
+  font-size: 16px;
   font-weight: 300;
 
   @include mq("md") {
@@ -425,7 +425,7 @@ body {
 .feature__cards {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 49px;
 
   @include mq("md") {
     flex-direction: row;
@@ -508,6 +508,7 @@ body {
 
   @include mq("md") {
     font-size: 16px;
+    margin-top: 23px;
   }
 }
 
@@ -550,6 +551,9 @@ body {
 }
 
 .products-card {
+  @include mq("md") {
+    flex: 1;
+  }
 }
 
 .products-card__image {
@@ -588,7 +592,7 @@ body {
   margin-top: 42px;
 
   @include mq("md") {
-    margin-top: 44px;
+    margin-top: 43px;
   }
 }
 
@@ -605,7 +609,7 @@ body {
 .news__cards {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 27px;
 
   @include mq("md") {
     gap: 24px;
@@ -621,7 +625,7 @@ body {
   border-bottom: solid 1px #E0E0E0;
 
   @include mq("md") {
-    padding-bottom: 24px;
+    padding-bottom: 23px;
   }
 
 
@@ -641,7 +645,7 @@ body {
     transition: transform 0.2s ease;
 
     @include mq("md") {
-      width: 260px;
+      max-width: 260px;
       flex-shrink: 0;
     }
 
@@ -692,7 +696,7 @@ body {
   text-align: center;
 
   @include mq("md") {
-    margin-top: 44px;
+    margin-top: 43px;
   }
 }
 
@@ -706,6 +710,7 @@ body {
   margin-top: 32px;
 
   @include mq("md") {
+    margin-top: 0;
     flex-grow: 1;
   }
 }
@@ -762,6 +767,8 @@ body {
 }
 
 .concept2__text {
+  font-size: 14px;
+
   @include mq("md") {
     margin-top: 36px;
     font-size: 16px;
@@ -984,9 +991,14 @@ body {
   &::after {
     content: "";
     position: absolute;
+    transform: translateY(2px);
     left: 0;
     inset-block: 0;
     margin-block: auto;
+
+    @include mq("md") {
+      transform: translateY(0px);
+    }
   }
 
   &::before {
@@ -1009,7 +1021,7 @@ body {
   text-align: center;
   display: flex;
   justify-content: center;
-  margin-top: 23px;
+  margin-top: 24px;
 
   @include mq("md") {
     margin-top: 44px;
@@ -1047,7 +1059,7 @@ body {
 }
 
 .footer__menu-items {
-  margin-top: 22px;
+  margin-top: 23px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -1068,18 +1080,18 @@ body {
 }
 
 .footer__sns-btn {
-  margin-top: 18px;
+  margin-top: 12px;
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 41px;
 
   @include mq("md") {
-    margin-top: 20px;
+    margin-top: 12px;
   }
 }
 
 .footer__sns-icon {
-  width: 21px;
+  width: 18px;
 }
 
 .footer__sns-link {
