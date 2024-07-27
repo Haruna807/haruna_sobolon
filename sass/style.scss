@@ -375,7 +375,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 34px;
-  
+
   @include mq("md") {
     flex-direction: row;
     gap: calc(80px/ 1200px * 100%);
@@ -787,7 +787,7 @@ body {
   @include mq("lg") {
     font-size: 25px;
   }
-  
+
   @include mq("xl") {
     font-size: 28px;
   }
@@ -1112,7 +1112,6 @@ body {
       }
     }
   }
-  
 }
 
 .footer__menu-items {
