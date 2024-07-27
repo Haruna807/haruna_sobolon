@@ -1133,7 +1133,7 @@ body {
 
 .footer__menu-link {
   @include mq("md") {
-    transition-duration: opacity 0.3s;
+    transition: opacity 0.3s;
 
     &:hover {
       opacity: 0.6;
@@ -1161,7 +1161,7 @@ body {
   }
 
   @include mq("md") {
-    transition-duration: opacity 0.3s;
+    transition: opacity 0.3s;
 
     &:hover {
       opacity: 0.6;
