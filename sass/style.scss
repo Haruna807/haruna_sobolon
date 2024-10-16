@@ -981,6 +981,7 @@ body {
   resize: vertical;
   font-size: 16px;
   border: 0;
+  font-family: inherit;
 
   &:focus {
     outline: $main-color auto 1px;
